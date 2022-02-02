@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
@@ -25,8 +26,18 @@ const App = () => {
   ];
 
   const addExpenseHandler = expense => {
-    console.log('In App.js');
-    console.log(expense);
+    const newTitle = expense.title;
+    const newID = `e${expenses.length + 1}`;
+    const newAmount = expense.amount;
+    const newDate = new Date(expense.date);
+    console.log('adding');
+    expenses.push({
+      id: newID,
+      title: newTitle,
+      amount: parseInt(newAmount),
+      date: newDate
+    });
+
   }
 
   return (
