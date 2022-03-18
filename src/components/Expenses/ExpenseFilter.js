@@ -3,6 +3,7 @@ import './ExpenseFilter.css';
 const ExpensesFilter = (props) => {
     const yearFilterChangeHandler = (event) => {
         props.expenseFilterChangeHandler(event.target.value);
+        console.log("Changed");
     }
 
     return (
